@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.layout__wrapper {
+  background-image: linear-gradient(0deg, hsl(215, 14%, 16%) 0%, hsl(215, 19%, 29%) 100%);
+  border-radius: 5px;
+  box-shadow: 0 12px 16px rgba(81, 87, 141, 0.616);
+  margin: 3rem auto;
+  max-width: 370px;
+  border: 1.5px solid rgb(0, 0, 110);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
 }
 
-.App-header {
-  background-color: #282c34;
+:root {
+  --border-radius-500: 8px;
+  --color-on-background: #ffffff;
+  --fonts-primary: Karla, sans-serif;
+}
+
+body {
+  /* background-color: #2a385c;
+  background-image: linear-gradient(320deg, hsl(215, 10%, 12%) 0% down, hsl(215, 19%, 24%) up 100%); */
+  font-family: var(--fonts-primary);
+  font-size: 14px;
+  margin: 0;
   min-height: 100vh;
+}
+
+.header {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: 1000; /* Make sure the overlay is on top of everything */
+}
+
+.custom-modal {
+  z-index: 2000; /* Set a higher z-index to be in front of the overlay */
+}
+
+.app-icon {
+  cursor: pointer;
+}
+
+.app-icon:hover {
+  scale: 1.05;
+}
+
+.backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px;
+  height: 500px;
+  background-color: white;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
